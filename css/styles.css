@@ -105,7 +105,7 @@ background-image:  url('../newburgbg.png');
 .hero-header {
   position: relative;
   color: var(--white);
-  padding: 4rem 1.5rem 7rem;
+  padding: 1.5rem;
   text-align: center;
   overflow: hidden;
 }
@@ -143,12 +143,32 @@ background-image:  url('../newburgbg.png');
   text-shadow: -2px -2px 2px rgba(30, 0, 100, 0.25),
     2px -2px 2px rgba(30, 0, 100, 0.25), -2px 2px 2px rgba(30, 0, 100, 0.25),
     2px 2px 2px rgba(30, 0, 100, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #mainTitle span {
     font-size:6.3rem;
   color: rgba(53, 31, 104, 0.86);
   -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+.hero-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .subtitle {
@@ -319,8 +339,9 @@ sup a {
 
 /* Footer */
 footer {
-  background: var(--dark-gray);
   color: var(--white);
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(1px);
   padding: 2rem 1.5rem;
   text-align: center;
   margin-top: 3rem;
