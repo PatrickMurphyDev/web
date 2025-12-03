@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <!-- Parallax background -->
+    <div class="parallax-bg">
+        <div class="parallax-layer parallax-top"></div>
+        <div class="parallax-layer parallax-tile"></div>
+        <div class="parallax-layer parallax-bottom"></div>
+    </div>
+
     <header class="hero-header">
         <div class="hero-content">
             <div class="hero-header">
@@ -164,7 +171,43 @@
             </p>
         </footer>
     </div>
-</body>
+
+    <script>
+        (function () {
+            const topLayer = document.querySelector('.parallax-top');
+            const tileLayer = document.querySelector('.parallax-tile');
+            const bottomLayer = document.querySelector('.parallax-bottom');
+
+            if (!topLayer || !tileLayer || !bottomLayer) return;
+
+            function onScroll() {
+                const scrollY = window.scrollY || window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? scrollY / docHeight : 0;
+
+                // Move the top and tile layers at slightly different speeds
+                const topOffset = scrollY * 0.4;
+                const tileOffset = scrollY * 0.7;
+
+                topLayer.style.transform = `translateY(${topOffset * -0.2}px)`;
+                tileLayer.style.backgroundPosition = `center ${tileOffset * -0.1}px`;
+
+                // Fade and slide the bottom image in as we near the bottom of the page
+                const startReveal = 0.6; // when bottom image starts appearing
+                const endReveal = 1.0;   // fully visible at bottom
+                let t = (progress - startReveal) / (endReveal - startReveal);
+                t = Math.min(1, Math.max(0, t));
+
+                const translateY = 50 * (1 - t); // slide up slightly
+                bottomLayer.style.opacity = t;
+                bottomLayer.style.transform = `translateY(${translateY}px)`;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            onScroll();
+        })();
+    </script>
 </body>
 
 </html>

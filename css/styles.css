@@ -24,12 +24,52 @@ body {
 }
 
 body {
-  background-image: url("../newburgbg.png");
-  background-size: contain;
+  background-color: rgb(220, 167, 110);
+}
+
+/* Parallax background */
+.parallax-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.parallax-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  will-change: transform, opacity, background-position;
+}
+
+.parallax-top {
+  top: 0;
+  height: 902px;
+  background-image: url("../bg_top.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: local;
-  background-color: rgb(220, 167, 110);
+  background-size: contain;
+}
+
+.parallax-tile {
+  top: 0;
+  bottom: 0;
+  background-image: url("../bg_tile.png");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: contain;
+}
+
+.parallax-bottom {
+  bottom: 0;
+  height: 520px;
+  background-image: url("../bg_bottom.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  opacity: 0;
 }
 
 #mainPageContent {
@@ -51,6 +91,8 @@ body {
   margin: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  margin-bottom: 300px;
 }
 
 /* Header Styles 
