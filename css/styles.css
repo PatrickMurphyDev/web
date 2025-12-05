@@ -1,3 +1,6 @@
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
 :root {
   --primary-blue: #1a3a5f;
   --secondary-blue: #2c5282;
@@ -9,6 +12,9 @@
   --white: #ffffff;
 }
 
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
 * {
   box-sizing: border-box;
 }
@@ -27,7 +33,41 @@ body {
   background-color: rgb(220, 167, 110);
 }
 
-/* Parallax background */
+/* ============================================
+   LAYOUT & CONTAINERS
+   ============================================ */
+#mainPageContent {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: transparent; /* let parallax show through */
+  border: none;
+  box-shadow: none;
+}
+
+#mainContentArea {
+  padding: 2rem 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* Two Column Layout */
+#twoColContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+#leftCol {
+  grid-column: 1;
+}
+
+/* ============================================
+   PARALLAX BACKGROUND
+   ============================================ */
 .parallax-bg {
   position: fixed;
   inset: 0;
@@ -47,7 +87,7 @@ body {
 .parallax-top {
   top: 0;
   height: 1100px;
-  background-image: url("../bg_top.png");
+  background-image: url("../images/bg_top.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: local;
@@ -57,7 +97,7 @@ body {
 
 .parallax-tile {
   bottom: 0;
-  background-image: url("../bg_tile.png");
+  background-image: url("../images/bg_tile.png");
   background-repeat: repeat-y;
   background-position: center top;
   background-size: contain;
@@ -66,7 +106,7 @@ body {
 
 .parallax-bottom {
   bottom: 0;
-  background-image: url("../bg_bottom.png");
+  background-image: url("../images/bg_bottom.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
@@ -74,17 +114,9 @@ body {
   z-index: 3;
 }
 
-#mainPageContent {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  margin: 20px;
-  background: transparent; /* let parallax show through */
-  border: none;
-  box-shadow: none;
-}
-
-/* OS-style floating windows */
+/* ============================================
+   OS WINDOW COMPONENTS
+   ============================================ */
 .os-window {
   position: relative;
   background: rgba(255, 255, 255, 0.5);
@@ -127,7 +159,7 @@ body {
 }
 
 .window-dot.close {
-  background:rgb(68, 162, 239);
+  background: rgb(68, 162, 239);
 }
 
 .window-dot.minimize {
@@ -154,7 +186,7 @@ body {
 }
 
 .window-body {
-  padding: 1.5rem 1.5rem 1.75rem;
+  padding: 0rem 1.5rem 1.75rem;
 }
 
 /* Two-column layout inside OS window body (text left, image right) */
@@ -173,12 +205,9 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Header Styles 
-
-background-image:  url('../newburgbg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;*/
+/* ============================================
+   HEADER & HERO
+   ============================================ */
 .hero-header {
   position: relative;
   color: var(--white);
@@ -201,17 +230,6 @@ background-image:  url('../newburgbg.png');
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.shadowText {
-  text-shadow: -2px -2px 2px rgba(30, 0, 100, 0.25),
-    2px -2px 2px rgba(30, 0, 100, 0.25), -2px 2px 2px rgba(30, 0, 100, 0.25),
-    2px 2px 2px rgba(30, 0, 100, 0.25);
-}
-.shadowText2 {
-    text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25),
-      4px -4px 4px rgba(255, 255, 255, 0.25), -4px 4px 4px rgba(255, 255, 255, 0.25),
-      4px 4px 4px rgba(255, 255, 255, 0.25);
-  }
-
 #mainTitle {
   margin: 0;
   font-size: 5rem;
@@ -226,7 +244,7 @@ background-image:  url('../newburgbg.png');
 }
 
 #mainTitle span {
-    font-size:6.3rem;
+  font-size: 6.3rem;
   color: rgba(53, 31, 104, 0.86);
   -webkit-text-stroke: 1px rgb(255, 255, 255);
 }
@@ -237,24 +255,27 @@ background-image:  url('../newburgbg.png');
   display: block;
 }
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .subtitle {
   font-size: 1.2rem;
   margin-top: 0.1rem;
   opacity: 0.9;
 }
 
-/* Navigation */
+.shadowText {
+  text-shadow: -2px -2px 2px rgba(30, 0, 100, 0.25),
+    2px -2px 2px rgba(30, 0, 100, 0.25), -2px 2px 2px rgba(30, 0, 100, 0.25),
+    2px 2px 2px rgba(30, 0, 100, 0.25);
+}
+
+.shadowText2 {
+  text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.25),
+    4px -4px 4px rgba(255, 255, 255, 0.25), -4px 4px 4px rgba(255, 255, 255, 0.25),
+    4px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
 .hero-nav {
   margin-top: 1.5rem;
   padding: 1rem 1.5rem;
@@ -286,15 +307,9 @@ background-image:  url('../newburgbg.png');
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Main Content */
-#mainContentArea {
-  padding: 2rem 1.5rem;
-}
-
-section {
-  margin-bottom: 3rem;
-}
-
+/* ============================================
+   TYPOGRAPHY & TEXT
+   ============================================ */
 h2 {
   color: var(--primary-blue);
   border-bottom: 2px solid var(--medium-gray);
@@ -310,18 +325,28 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* Two Column Layout */
-#twoColContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin: 2rem 0;
+ul {
+  padding-left: 1.5rem;
 }
 
-#leftCol {
-  grid-column: 1;
+li {
+  margin-bottom: 0.75rem;
 }
 
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* ============================================
+   IMAGES & MEDIA
+   ============================================ */
 .image-container {
   grid-column: 2;
   display: flex;
@@ -331,8 +356,8 @@ p {
 
 .image-container img {
   max-width: 100%;
-  background: radial-gradient(#333333bb,#33333377,#ffffff00, #ffffff00);
-  background-position-y:120px;
+  background: radial-gradient(#333333bb, #33333377, #ffffff00, #ffffff00);
+  background-position-y: 120px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border-radius: 8px;
@@ -346,7 +371,9 @@ p {
   text-align: center;
 }
 
-/* Map Section */
+/* ============================================
+   MAP SECTION
+   ============================================ */
 #whereAreALPR {
   margin-top: 2rem;
 }
@@ -379,10 +406,11 @@ p {
   border-radius: 4px;
 }
 
-/* Call to Action */
+/* ============================================
+   CALL TO ACTION
+   ============================================ */
 #takeAction {
   background: var(--light-gray);
-  
   text-align: center;
 }
 
@@ -392,8 +420,11 @@ p {
   margin-bottom: 1rem;
 }
 
+/* ============================================
+   REFERENCES
+   ============================================ */
 .references {
-  margin-top: .2rem;
+  margin-top: 0.2rem;
   padding: 0.5rem;
   display: none;
   background: rgba(255, 255, 255, 0.45);
@@ -422,16 +453,10 @@ p {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-/* Lists */
-ul {
-  padding-left: 1.5rem;
-}
 
-li {
-  margin-bottom: 0.75rem;
-}
-
-/* Links */
+/* ============================================
+   LINKS
+   ============================================ */
 a {
   color: var(--secondary-blue);
   text-decoration: none;
@@ -446,7 +471,9 @@ sup a {
   font-weight: bold;
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
   color: var(--white);
   background-color: rgba(0, 0, 0, 0.15);
@@ -456,7 +483,9 @@ footer {
   margin-top: 3rem;
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 @media (max-width: 768px) {
   #twoColContainer {
     grid-template-columns: 1fr;
